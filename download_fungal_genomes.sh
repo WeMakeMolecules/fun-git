@@ -5,7 +5,7 @@ echo "# Type download_genomes.sh and a keyword the script will download the geno
 echo "# usage: download_genomes.sh  'Genus specie strain'   use the quotation marks '                                                #"
 echo "# or: download_genomes.sh  'KEYWORD' single word no spaces                                                                     #"
 echo "# WARNING: Depending on the keyword you can download THE ENTIRE DATABASE!, you may try grep with your keyword first            #"
-echo "# dependencies: curl gunzip                                                                                                    #"
+echo "# dependencies: curl pigz                                                                                                    #"
 echo "################################################################################################################################"
 echo " "
 echo " "
@@ -32,7 +32,7 @@ echo "DOWNLOADING THE FILES..."
 wget --input-file=downloads.txt
 
 #this line is to decompress the files which are in gzip format
-gunzip *.gz
+pigz -d *.gz
 echo "RENAMING FILES..."
 
 #this line is to create a little script with the orders to rename the files with the species + strain name
