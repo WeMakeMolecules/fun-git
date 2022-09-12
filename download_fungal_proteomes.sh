@@ -38,7 +38,7 @@ wget --input-file=downloads.txt -q
 
 
 #this line is to decompress the files which are in gzip format
-gunzip *.gz
+pigz -d *.gz
 
 
 echo "RENAMING FILES..."
