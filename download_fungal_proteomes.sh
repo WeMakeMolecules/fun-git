@@ -5,7 +5,7 @@ echo "# Type download_fungal_protemomes.sh and a keyword the script will downloa
 echo "# usage: download_fungal_proteomes.sh  'Genus specie strain'   use the quotation marks '                                                #"
 echo "# or: download_fungal_proteomes.sh  'KEYWORD' single word no spaces                                                                     #"
 echo "# WARNING: Depending on the keyword you can download THE ENTIRE DATABASE!, you may try grep with your keyword first            #"
-echo "# dependencies: curl gunzip                                                                                                    #"
+echo "# dependencies: curl pigz                                                                                                    #"
 echo "################################################################################################################################"
 echo " "
 echo " "
