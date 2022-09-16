@@ -23,7 +23,6 @@ echo "FINDING THE RIGHT ENTRIES..."
 grep "$1"  assembly_summary.txt  > list.txt
 
 #this line is to use the $1.list.txt file (entries with only the keyword) and create file with a list of downloads
-awk '{FS="\t"} !/^#/ {print $20} ' list.txt  | sed -r 's|(ftp://ftp.ncbi.nlm.nih.gov/genomes/all/.+/)(GCA_.+)|\1\2\/\2_genomic.fna.gz|'|sed s'/identical//' > downloads.txt
 echo "MAKING A LIST OF DOWNLOADS..."
 cut -f 20 list.txt |perl -ne '/(https.+)(GCA_.+)/; print "$1$2/$2_genomic.fna.gz\n"' > downloads.txt
 echo "DOWNLOADING THE FILES..."
