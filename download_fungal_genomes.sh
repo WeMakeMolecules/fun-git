@@ -35,9 +35,9 @@ pigz -d *.gz
 echo "RENAMING FILES..."
 
 #this line is to create a little script with the orders to rename the files with the species + strain name
-awk 'BEGIN {FS="\t"}; {print "mv,"$1"*genomic.fna,"$8$9$1".fna"}' list.txt | sed s'/ /_/g'|sed s'/=/-/g'|sed s'/strain//'|sed s'/(//'|sed s'/)//'|sed 's/-/_/g'|sed 's/,/ /g' >rename.sh
+awk 'BEGIN {FS="\t"}; {print "mv,"$1"*genomic.fna,"$8$9$1".fna"}' list.txt | sed s'/ /_/g'|sed s'/=/-/g'|sed s'/strain//'|sed s'/(//g'|sed s'/)//g'|sed 's/-/_/g'|sed 's/,//g'|sed 's/://g'sed 's/\///g' >rename.sh
 
-#his line is to run the script that renames the files
+#this line is to run the script that renames the files
 sh rename.sh
 
 #this line is to eliminate all the intermediate files that we created 
