@@ -1,7 +1,7 @@
 # modified from "http://enve-omics.ce.gatech.edu/enveomics/docs?t=FastA.N50.pl"
 # now it also calculates GC content ;)
 #now displays data in tabular format
-print "File\tLength\tContigs\tGC\tN50\t";
+print "File\tLength\tContigs\tGC\tN50\n";
 
 open FILE, $ARGV[0] or die "i can not open the input FILE\n";
 $name="$ARGV[0]";
